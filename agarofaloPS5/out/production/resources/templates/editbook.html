@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Penn Games</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+            integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div th:include="layout :: head"/>
+
+<section>
+
+    <h2>Edit Book</h2>
+    <form th:action="@{/admin/books/editbook}" method="post">
+        <div>
+            <label>Game Name: </label>
+            <input name="bookId" type="text" th:value="${bookId}" />
+        </div>
+        <div>
+            <label>Publisher: </label>
+            <input name="title" type="text" th:value="${title}" />
+        </div>
+        <div>
+            <label>Price: </label>
+            <input name="isbn" type="text" th:value="${isbn}" />
+        </div>
+        <div>
+            <label>Rating: </label>
+            <input name="author" type="text" th:value="${author}" />
+        </div>
+        <div>
+            <label>Rating: </label>
+            <input name="date" type="text" th:value="${date}" />
+        </div>
+        <div>
+            <label>Rating: </label>
+            <input name="genre" type="text" th:value="${genre}" />
+        </div>
+        <div>
+            <label>Rating: </label>
+            <input name="price" type="text" th:value="${price}" />
+        </div>
+        <div>
+            <input name="gameId" th:value="${gameId}" type="hidden" />
+            <button>Edit Game</button>
+        </div>
+    </form>
+
+</section>
+
+<div th:include="layout :: foot"/>
+
+</body>
+</html>

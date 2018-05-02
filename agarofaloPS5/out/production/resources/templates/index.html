@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Penn Games</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+            integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div th:include="layout :: head"/>
+
+<section>
+
+    <h2>Index Page</h2>
+    <form th:action="@{/}" method="post">
+        <div>
+            <label>Book Name: </label>
+            <input name="filterName" type="text"/>
+        </div>
+        <div>
+            <button>Filter</button>
+        </div>
+        <table>
+            <caption>Book Inventory</caption>
+            <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>isbn</th>
+                <th>Author</th>
+                <th>Date</th>
+                <th>Genre</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="book : ${bookList}">
+                <td><a th:if="${#httpServletRequest.remoteUser}" th:href="${'/admin/books/delete/' + book.bookId}">Delete</a></td>
+                <td><a th:if="${#httpServletRequest.remoteUser}" th:href="${'/admin/books/edit/{bookId}' + book.bookId}">Edit</a></td>
+                <td><p th:text="${book.bookId}"></p></td>
+                <td><p th:text="${book.title}"></p></td>
+                <td><p th:text="${book.isbn}"></p></td>
+                <td><p th:text="${book.author}"></p></td>
+                <td><p th:text="${book.date}"></p></td>
+                <td><p th:text="${book.genre}"></p></td>
+                <td><span>$ </span><span th:text="${book.price}"></span></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+
+</section>
+
+<div th:include="layout :: foot"/>
+
+</body>
+</html>

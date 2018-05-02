@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Layout</title>
+</head>
+<body>
+
+<!-- header -->
+<div th:fragment="head">
+    <header>
+        <h1>Welcome to Moby Dickens!</h1>
+    </header>
+</div>
+
+<!-- Footer -->
+<div th:fragment="foot">
+    <footer>
+        <cite>&copy; 2017 Moby Dickens Bookstore</cite>
+        <ul>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/contact-us">Contact Us</a></li>
+            <li th:if="${#httpServletRequest.remoteUser}"><a href="/admin/books/view">View All Books</a></li>
+            <li th:if="${#httpServletRequest.remoteUser}"><a href="/admin/books/add">Add Book</a></li>
+            <li th:if="${#httpServletRequest.remoteUser}"><a href="/admin/books/edit/{bookId}">Edit Book</a></li>
+            <li><a href="/console">H2 Console</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </footer>
+</div>
+
+
+
+
+</body>
+</html>

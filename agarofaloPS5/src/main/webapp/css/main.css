@@ -1,0 +1,34 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-image: url("/img/bkg.jpg") !important;
+}
+
+table {
+    background-color: white;
+    border: 1px solid #666;
+    width: 95%;
+    margin: 10px auto 10px auto;
+}
+
+table td {
+    border: 1px solid #999;
+}
+
+form div {
+    clear: both;
+}
+
+form div label {
+    width: 35%;
+    display: block;
+    float: left;
+}
+
+form div input {
+    width: 50%;
+    display: block;
+    float: left;
+}
