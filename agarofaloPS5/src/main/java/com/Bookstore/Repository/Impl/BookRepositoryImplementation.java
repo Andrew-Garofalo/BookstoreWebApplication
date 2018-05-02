@@ -1,7 +1,6 @@
 package com.Bookstore.Repository.Impl;
 
 import com.Bookstore.Model.Book;
-import com.Bookstore.Model.DateTime;
 import com.Bookstore.Model.Genre;
 import com.Bookstore.Repository.BookRepository;
 import com.Bookstore.jpa.BookCrudRepository;
@@ -23,7 +22,7 @@ public class BookRepositoryImplementation implements BookRepository{
 
     @Override
     public List<Book> findAllBooksByBookAuthor(String search) {
-        return  bookCrudRepository.findByAuthor(search);
+        return   bookCrudRepository.findByAuthor(search);
     }
 
     @Override

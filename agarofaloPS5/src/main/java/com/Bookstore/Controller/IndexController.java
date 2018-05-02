@@ -1,7 +1,6 @@
 package com.Bookstore.Controller;
 
 import com.Bookstore.Model.Book;
-import com.Bookstore.Model.DateTime;
 import com.Bookstore.Model.Genre;
 import com.Bookstore.Service.BookService;
 import lombok.extern.slf4j.Slf4j;
@@ -41,6 +40,13 @@ public class IndexController {
         List<Book> bookList = bookService.findAllBooks();
         model.addAttribute("bookList", bookList);
 
+        return "search";
+    }
+
+    @PostMapping(value = "/search")
+    public String filteredSearchPage(@RequestParam String filterName, Model model) {
+        List<Book> bookList = bookService.findAllBooksByBookAuthor(filterName);
+        model.addAttribute("bookList", bookList);
         return "search";
     }
 
