@@ -15,7 +15,25 @@
 }
 
 #pageHeader{
+    margin-right:140px;
     margin-bottom: 2px;
+}
+
+#addLabel{
+    margin-left: 10%;
+    margin-right: 45px;
+}
+
+#addBox{
+    margin-left:-25%;
+}
+h1 {
+    font-weight:bold;
+    text-align:center;
+}
+thead{
+    text-align:center;
+    vertical-align:middle;
 }
 
 hr {
@@ -26,7 +44,6 @@ hr {
 body {
 padding-left: 2%;
 background-color: aliceblue;
-
 }
 
 table {

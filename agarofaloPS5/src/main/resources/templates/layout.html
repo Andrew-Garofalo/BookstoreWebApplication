@@ -9,7 +9,9 @@
 <!-- header -->
 <div th:fragment="head">
     <header>
-        <h1> <a href="/" title="Cick here to return to homepage" id="pageHeader"> Welcome to Moby Dickens!</a></h1>
+        <h1> <a style="position:relative; " href="/" title="Cick here to return to homepage" id="pageHeader"> Welcome to Moby Dickens!</a>
+            <img style="position:relative;  top:0px;" height="150" width="250" src="https://d3jkudlc7u70kh.cloudfront.net/fun-whale-breaching-fact.jpg" /></h1>
+
         <hr />
     </header>
 </div>
@@ -19,6 +21,7 @@
     <footer>
         <cite>&copy; 2017 Moby Dickens Bookstore</cite>
         <ul>
+            <li><a href="/">Homepage</a></li>
             <li><a href="/search">Search</a></li>
             <li><a href="/contact-us">Contact Us</a></li>
             <li th:if="${#httpServletRequest.remoteUser}"><a href="/admin/books/view">View All Books</a></li>
