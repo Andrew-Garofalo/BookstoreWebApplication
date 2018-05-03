@@ -27,6 +27,20 @@
 #addBox{
     margin-left:-25%;
 }
+
+.wrapper{
+    min-height: 50%;
+    margin: 0 auto -50px;
+}
+.push{
+    padding:50px;
+    height:50px;
+}
+
+footer{
+    height:50px;
+}
+
 h1 {
     font-weight:bold;
     text-align:center;
@@ -40,8 +54,14 @@ hr {
     margin-top: -1%;
 }
 
+html{
+    height: 100%;
+    margin:0;
+}
 
 body {
+    height: 100%;
+    margin:0;
 padding-left: 2%;
 background-color: aliceblue;
 }
